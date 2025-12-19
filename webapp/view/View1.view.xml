@@ -1,11 +1,25 @@
 <mvc:View controllerName="qualityportal.controller.View1"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m">
-    <Page id="page" title="Quality Engineer Dashboard">
+    <Page id="page" title="{i18n>title}">
         <content>
-            <FlexBox alignItems="Center" justifyContent="Center" height="100%">
-                <Text text="Welcome to the Quality Engineer Dashboard" class="sapUiMediumMargin"/>
-            </FlexBox>
+            <TileContainer id="dashboardContainer">
+                <StandardTile
+                    icon="sap-icon://inspection"
+                    title="{i18n>inspectionLotTitle}"
+                    info="{i18n>inspectionLotInfo}"
+                    press="onInspectionLotPress" />
+                <StandardTile
+                    icon="sap-icon://clipboard"
+                    title="{i18n>resultRecordsTitle}"
+                    info="{i18n>resultRecordsInfo}"
+                    press="onResultRecordsPress" />
+                <StandardTile
+                    icon="sap-icon://accept"
+                    title="{i18n>usageDecisionTitle}"
+                    info="{i18n>usageDecisionInfo}"
+                    press="onUsageDecisionPress" />
+            </TileContainer>
         </content>
     </Page>
 </mvc:View>
