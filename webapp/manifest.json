@@ -60,7 +60,12 @@
       "i18n": {
         "type": "sap.ui.model.resource.ResourceModel",
         "settings": {
-          "bundleName": "qualityportal.i18n.i18n"
+          "bundleName": "qualityportal.i18n.i18n",
+          "supportedLocales": [
+            "en",
+            ""
+          ],
+          "fallbackLocale": "en"
         }
       },
       "": {

@@ -86,29 +86,43 @@
     color: #444;
     font-size: 0.9rem;
     font-weight: 700;
-    margin-bottom: 0.25rem;
+    margin-bottom: 0.5rem;
     display: block;
 }
 
-.modernInput .sapMInputBaseInner {
+/* Fix for Input Height and Text Alignment */
+.modernInput {
+    height: 48px !important;
+    /* Force control height */
+}
+
+.modernInput .sapMInputBaseContentWrapper {
+    height: 48px !important;
+    border-radius: 8px;
     background: rgba(255, 255, 255, 0.9);
     border: 1px solid #ccc;
-    border-radius: 8px;
-    height: 44px;
-    /* Taller inputs */
-    padding-left: 12px;
     transition: all 0.2s ease;
 }
 
-.modernInput.sapMInputBaseContentWrapper {
-    border: none;
-    /* Remove outer wrapper border */
+.modernInput .sapMInputBaseInner {
+    height: 100% !important;
+    padding: 0 12px !important;
+    background: transparent !important;
+    border: none !important;
+    line-height: 46px !important;
+    /* Vertically center text (-2px for border) */
+    font-size: 1rem;
 }
 
-.modernInput .sapMInputBaseInner:focus {
+/* Remove default focus outline and handle custom focus on wrapper */
+.modernInput .sapMInputBaseContentWrapper:focus-within {
     border-color: #26D0CE;
     box-shadow: 0 0 0 3px rgba(38, 208, 206, 0.2);
     background: #fff;
+}
+
+.modernInput .sapMInputBaseInner:focus {
+    outline: none;
 }
 
 /* 5. Button */
