@@ -62,10 +62,9 @@
         "settings": {
           "bundleName": "qualityportal.i18n.i18n",
           "supportedLocales": [
-            "en",
             ""
           ],
-          "fallbackLocale": "en"
+          "fallbackLocale": ""
         }
       },
       "": {
