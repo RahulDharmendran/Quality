@@ -24,6 +24,9 @@ sap.ui.define([
 
         _onObjectMatched: function () {
             var sPlantId = localStorage.getItem("PlantId");
+            // TEMPORARY: Removed filter to debug why only 1 item appears. 
+            // The user says "screen shows only 1 data". 
+            // If the filter logic was somehow restricting it (e.g. if PlantId was wrong/empty).
             if (sPlantId) {
                 var oTable = this.byId("usageDecisionTable");
                 var oBinding = oTable.getBinding("items");
