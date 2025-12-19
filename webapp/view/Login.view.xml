@@ -11,9 +11,9 @@
                 <items>
                     <VBox class="loginBox sapUiResponsiveMargin sapUiContentPadding">
                         <!-- Decorative Top Decoration -->
-                        <Box justifyContent="Center" class="logoContainer sapUiSmallMarginBottom">
+                        <HBox justifyContent="Center" class="logoContainer sapUiSmallMarginBottom">
                             <Avatar src="sap-icon://quality-issue" displaySize="L" class="loginIcon sapUiTinyMarginBottom" backgroundColor="Accent6"/>
-                        </Box>
+                        </HBox>
                         
                         <Title text="Quality Portal" level="H1" titleStyle="H2" class="loginTitle sapUiTinyMarginBottom"/>
                         <Text text="Engineer Authentication" class="loginSubtitle sapUiMediumMarginBottom"/>
