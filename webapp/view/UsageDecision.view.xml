@@ -42,6 +42,9 @@
                     <Column minScreenWidth="Desktop" demandPopin="true">
                         <Text text="{i18n>colDecisionDate}"/>
                     </Column>
+                     <Column minScreenWidth="Desktop" demandPopin="true">
+                        <Text text="Decision Time"/>
+                    </Column>
                     <Column minScreenWidth="Desktop" demandPopin="true">
                         <Text text="{i18n>colFollowupAction}"/>
                     </Column>
@@ -62,6 +65,7 @@
                             <Text text="{QualityScore}"/>
                             <Text text="{DecisionBy}"/>
                             <Text text="{path: 'DecisionDate', type: 'sap.ui.model.type.Date', formatOptions: { style: 'medium' }}"/>
+                            <Text text="{path: 'DecisionTime', formatter: '.formatter.formatTime'}"/>
                             <Text text="{FollowupAction}"/>
                             <ObjectStatus 
                                 text="{= ${UsageDecisionCode} === 'A' ? 'Approved' : (${UsageDecisionCode} === 'R' ? 'Rejected' : 'Pending') }" 

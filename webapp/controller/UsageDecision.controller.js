@@ -9,11 +9,14 @@ sap.ui.define([
     "sap/m/Text",
     "sap/m/VBox",
     "sap/m/MessageToast",
-    "sap/m/MessageBox"
-], function (Controller, History, Filter, FilterOperator, Dialog, Button, Label, Text, VBox, MessageToast, MessageBox) {
+    "sap/m/MessageBox",
+    "qualityportal/model/formatter"
+], function (Controller, History, Filter, FilterOperator, Dialog, Button, Label, Text, VBox, MessageToast, MessageBox, formatter) {
     "use strict";
 
     return Controller.extend("qualityportal.controller.UsageDecision", {
+        formatter: formatter,
+
         onInit: function () {
             var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
             oRouter.getRoute("RouteUsageDecision").attachPatternMatched(this._onObjectMatched, this);
