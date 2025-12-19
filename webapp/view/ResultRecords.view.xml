@@ -21,40 +21,16 @@
                     <Column minScreenWidth="Tablet" demandPopin="true">
                         <Text text="{i18n>colPlant}"/>
                     </Column>
-                    <Column minScreenWidth="Desktop" demandPopin="true">
-                        <Text text="{i18n>colOperationNo}"/>
-                    </Column>
-                    <Column minScreenWidth="Desktop" demandPopin="true">
-                        <Text text="{i18n>colCharacteristicNo}"/>
-                    </Column>
-                    <Column minScreenWidth="Desktop" demandPopin="true">
-                        <Text text="{i18n>colInspectionType}"/>
-                    </Column>
-                    <Column minScreenWidth="Desktop" demandPopin="true">
-                        <Text text="{i18n>colObjectNumber}"/>
-                    </Column>
-                     <Column minScreenWidth="Desktop" demandPopin="true">
-                        <Text text="{i18n>colObjectType}"/>
-                    </Column>
-                     <Column hAlign="Center">
-                        <Text text="{i18n>colStatus}"/>
-                    </Column>
                     <Column hAlign="Center">
                         <Text text="{i18n>colResultCode}"/>
                     </Column>
                 </columns>
                 <items>
-                    <ColumnListItem>
+                    <ColumnListItem type="Navigation" press="onRecordPress">
                         <cells>
                             <ObjectIdentifier title="{Prueflos}"/>
                             <Text text="{MaterialNumber}"/>
                             <Text text="{Plant}"/>
-                            <Text text="{OperationNo}"/>
-                            <Text text="{CharacteristicNo}"/>
-                            <Text text="{InspectionType}"/>
-                            <Text text="{ObjectNumber}"/>
-                             <Text text="{ObjectType}"/>
-                             <Text text="{Status}"/>
                             <ObjectStatus 
                                 text="{= ${ResultCode} === 'A' ? 'Approved' : (${ResultCode} === 'R' ? 'Rejected' : 'Pending') }" 
                                 state="{= ${ResultCode} === 'A' ? 'Success' : (${ResultCode} === 'R' ? 'Error' : 'Warning') }" 
