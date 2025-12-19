@@ -33,17 +33,20 @@ sap.ui.define([
             var oItem = oEvent.getSource();
             var oContext = oItem.getBindingContext();
             var sPrueflos = oContext.getProperty("Prueflos");
-            // Assuming we work with the Lot context to check Status
             var oModel = this.getView().getModel();
 
-            // Fetch Inspection Lot details to check Usage Decision status
-            // We use standard OData read.
-            var sPath = "/ZRD_QP_INSPECTIONSet('" + sPrueflos + "')";
+            // Use Filter instead of Key access because GET_ENTITY is not implemented
+            var aFilters = [new Filter("Prueflos", FilterOperator.EQ, sPrueflos)];
 
             var that = this;
-            oModel.read(sPath, {
+            oModel.read("/ZRD_QP_INSPECTIONSet", {
+                filters: aFilters,
                 success: function (oData) {
-                    that._openRecordingDialog(oData);
+                    if (oData.results && oData.results.length > 0) {
+                        that._openRecordingDialog(oData.results[0]);
+                    } else {
+                        MessageToast.show("Inspection Lot details not found.");
+                    }
                 },
                 error: function () {
                     MessageToast.show("Error fetching Lot details.");
