@@ -107,6 +107,13 @@
           "target": [
             "TargetView1"
           ]
+        },
+        {
+          "name": "RouteInspectionLot",
+          "pattern": "inspection-lot",
+          "target": [
+            "TargetInspectionLot"
+          ]
         }
       ],
       "targets": {
@@ -117,6 +124,10 @@
         "TargetView1": {
           "id": "View1",
           "name": "View1"
+        },
+        "TargetInspectionLot": {
+          "id": "InspectionLot",
+          "name": "InspectionLot"
         }
       }
     },
