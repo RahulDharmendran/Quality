@@ -1,0 +1,30 @@
+<mvc:View controllerName="qualityportal.controller.Login"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m"
+    xmlns:l="sap.ui.layout"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:core="sap.ui.core"
+    height="100%">
+    <Page id="loginPage" showHeader="false" class="loginPage">
+        <content>
+            <FlexBox alignItems="Center" justifyContent="Center" height="100%" class="loginContainer">
+                <items>
+                    <VBox class="loginBox sapUiResponsiveMargin sapUiMediumPadding">
+                        <Title text="Quality Portal" level="H1" titleStyle="H1" class="loginTitle sapUiSmallMarginBottom"/>
+                        <Text text="Engineer Authentication" class="loginSubtitle sapUiMediumMarginBottom"/>
+
+                        <VBox class="inputGroup">
+                            <Label text="User ID" labelFor="userIdInput" design="Bold"/>
+                            <Input id="userIdInput" placeholder="Enter your ID" width="100%" class="sapUiTinyMarginBottom"/>
+                            
+                            <Label text="Password" labelFor="passwordInput" design="Bold" class="sapUiSmallMarginTop"/>
+                            <Input id="passwordInput" type="Password" placeholder="Enter your password" width="100%"/>
+                        </VBox>
+
+                        <Button text="Login" type="Emphasized" press="onLoginPress" class="loginButton sapUiMediumMarginTop" width="100%"/>
+                    </VBox>
+                </items>
+            </FlexBox>
+        </content>
+    </Page>
+</mvc:View>

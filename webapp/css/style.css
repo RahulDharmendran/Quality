@@ -1,1 +1,57 @@
 /* Enter your custom styles here */
+
+.loginPage section {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); /* Deep Blue Gradient */
+    background-size: cover;
+}
+
+.loginContainer {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loginBox {
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 12px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    width: 400px;
+    max-width: 90%;
+}
+
+.loginTitle {
+    color: #1e3c72;
+    font-weight: 700 !important;
+    text-align: center;
+    font-family: "72", "Inter", sans-serif;
+}
+
+.loginSubtitle {
+    color: #555;
+    text-align: center;
+    font-size: 1rem;
+    display: block;
+    margin-bottom: 2rem;
+}
+
+.inputGroup .sapMLabel {
+    color: #333;
+    font-weight: 600;
+}
+
+.loginButton .sapMBtnInner {
+    background-color: #1e3c72;
+    border-color: #1e3c72;
+    color: white;
+    font-weight: bold;
+    border-radius: 6px;
+}
+
+.loginButton:hover .sapMBtnInner {
+    background-color: #2a5298;
+    border-color: #2a5298;
+}

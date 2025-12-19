@@ -17,7 +17,7 @@
     },
     "dataSources": {
       "mainService": {
-        "uri": "/sap/opu/odata/sap/ZRD_QP_PROJ_SRV/",
+        "uri": "/sap/opu/odata/SAP/ZRD_QP_PROJ_SRV/",
         "type": "OData",
         "settings": {
           "annotations": [],
@@ -90,14 +90,25 @@
       },
       "routes": [
         {
+          "name": "RouteLogin",
+          "pattern": "",
+          "target": [
+            "TargetLogin"
+          ]
+        },
+        {
           "name": "RouteView1",
-          "pattern": ":?query:",
+          "pattern": "dashboard",
           "target": [
             "TargetView1"
           ]
         }
       ],
       "targets": {
+        "TargetLogin": {
+          "id": "Login",
+          "name": "Login"
+        },
         "TargetView1": {
           "id": "View1",
           "name": "View1"

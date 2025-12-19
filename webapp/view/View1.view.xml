@@ -1,6 +1,11 @@
 <mvc:View controllerName="qualityportal.controller.View1"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m">
-    <Page id="page" title="{i18n>title}">
+    <Page id="page" title="Quality Engineer Dashboard">
+        <content>
+            <FlexBox alignItems="Center" justifyContent="Center" height="100%">
+                <Text text="Welcome to the Quality Engineer Dashboard" class="sapUiMediumMargin"/>
+            </FlexBox>
+        </content>
     </Page>
 </mvc:View>
