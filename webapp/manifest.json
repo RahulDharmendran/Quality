@@ -114,6 +114,20 @@
           "target": [
             "TargetInspectionLot"
           ]
+        },
+        {
+          "name": "RouteResultRecords",
+          "pattern": "result-records",
+          "target": [
+            "TargetResultRecords"
+          ]
+        },
+        {
+          "name": "RouteUsageDecision",
+          "pattern": "usage-decision",
+          "target": [
+            "TargetUsageDecision"
+          ]
         }
       ],
       "targets": {
@@ -128,6 +142,14 @@
         "TargetInspectionLot": {
           "id": "InspectionLot",
           "name": "InspectionLot"
+        },
+        "TargetResultRecords": {
+          "id": "ResultRecords",
+          "name": "ResultRecords"
+        },
+        "TargetUsageDecision": {
+          "id": "UsageDecision",
+          "name": "UsageDecision"
         }
       }
     },

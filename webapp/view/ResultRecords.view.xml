@@ -1,0 +1,68 @@
+<mvc:View controllerName="qualityportal.controller.ResultRecords"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core">
+    <Page id="resultRecordsPage" title="{i18n>resultRecordsTitle}" showNavButton="true" navButtonPress="onNavBack">
+        <content>
+            <Table id="resultRecordsTable" items="{path: '/ZRD_QP_RESULT_RECORDSSet'}" growing="true" growingThreshold="20" width="auto" class="sapUiResponsiveMargin">
+                <headerToolbar>
+                    <OverflowToolbar>
+                        <Title text="{i18n>resultRecordsTitle}" level="H2"/>
+                        <ToolbarSpacer/>
+                    </OverflowToolbar>
+                </headerToolbar>
+                <columns>
+                    <Column>
+                        <Text text="{i18n>colInspectionLot}"/>
+                    </Column>
+                    <Column minScreenWidth="Tablet" demandPopin="true">
+                        <Text text="{i18n>colMaterial}"/>
+                    </Column>
+                    <Column minScreenWidth="Tablet" demandPopin="true">
+                        <Text text="{i18n>colPlant}"/>
+                    </Column>
+                    <Column minScreenWidth="Desktop" demandPopin="true">
+                        <Text text="{i18n>colOperationNo}"/>
+                    </Column>
+                    <Column minScreenWidth="Desktop" demandPopin="true">
+                        <Text text="{i18n>colCharacteristicNo}"/>
+                    </Column>
+                    <Column minScreenWidth="Desktop" demandPopin="true">
+                        <Text text="{i18n>colInspectionType}"/>
+                    </Column>
+                    <Column minScreenWidth="Desktop" demandPopin="true">
+                        <Text text="{i18n>colObjectNumber}"/>
+                    </Column>
+                     <Column minScreenWidth="Desktop" demandPopin="true">
+                        <Text text="{i18n>colObjectType}"/>
+                    </Column>
+                     <Column hAlign="Center">
+                        <Text text="{i18n>colStatus}"/>
+                    </Column>
+                    <Column hAlign="Center">
+                        <Text text="{i18n>colResultCode}"/>
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem>
+                        <cells>
+                            <ObjectIdentifier title="{Prueflos}"/>
+                            <Text text="{MaterialNumber}"/>
+                            <Text text="{Plant}"/>
+                            <Text text="{OperationNo}"/>
+                            <Text text="{CharacteristicNo}"/>
+                            <Text text="{InspectionType}"/>
+                            <Text text="{ObjectNumber}"/>
+                             <Text text="{ObjectType}"/>
+                             <Text text="{Status}"/>
+                            <ObjectStatus 
+                                text="{= ${ResultCode} === 'A' ? 'Approved' : (${ResultCode} === 'R' ? 'Rejected' : 'Pending') }" 
+                                state="{= ${ResultCode} === 'A' ? 'Success' : (${ResultCode} === 'R' ? 'Error' : 'Warning') }" 
+                                icon="{= ${ResultCode} === 'A' ? 'sap-icon://accept' : (${ResultCode} === 'R' ? 'sap-icon://decline' : 'sap-icon://pending') }"/>
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+    </Page>
+</mvc:View>

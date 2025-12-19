@@ -8,16 +8,19 @@
                     icon="sap-icon://inspection"
                     title="{i18n>inspectionLotTitle}"
                     info="{i18n>inspectionLotInfo}"
+                    number="{dashboard>/inspectionCount}"
                     press="onInspectionLotPress" />
                 <StandardTile
                     icon="sap-icon://clipboard"
                     title="{i18n>resultRecordsTitle}"
                     info="{i18n>resultRecordsInfo}"
+                    number="{dashboard>/resultsCount}"
                     press="onResultRecordsPress" />
                 <StandardTile
                     icon="sap-icon://accept"
                     title="{i18n>usageDecisionTitle}"
                     info="{i18n>usageDecisionInfo}"
+                    number="{dashboard>/decisionCount}"
                     press="onUsageDecisionPress" />
             </TileContainer>
         </content>

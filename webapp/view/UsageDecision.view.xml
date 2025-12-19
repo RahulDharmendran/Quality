@@ -1,0 +1,76 @@
+<mvc:View controllerName="qualityportal.controller.UsageDecision"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core">
+    <Page id="usageDecisionPage" title="{i18n>usageDecisionTitle}" showNavButton="true" navButtonPress="onNavBack">
+        <content>
+            <Table id="usageDecisionTable" items="{path: '/ZRD_QP_USAGE_DECISIONSet'}" growing="true" growingThreshold="20" width="auto" class="sapUiResponsiveMargin">
+                <headerToolbar>
+                    <OverflowToolbar>
+                        <Title text="{i18n>usageDecisionTitle}" level="H2"/>
+                        <ToolbarSpacer/>
+                    </OverflowToolbar>
+                </headerToolbar>
+                <columns>
+                    <Column>
+                        <Text text="{i18n>colInspectionLot}"/>
+                    </Column>
+                    <Column minScreenWidth="Tablet" demandPopin="true">
+                        <Text text="{i18n>colPlant}"/>
+                    </Column>
+                     <Column minScreenWidth="Tablet" demandPopin="true">
+                        <Text text="{i18n>colInspectionLotType}"/>
+                    </Column>
+                    <Column minScreenWidth="Desktop" demandPopin="true">
+                        <Text text="{i18n>colUsageCatalog}"/>
+                    </Column>
+                    <Column minScreenWidth="Desktop" demandPopin="true">
+                        <Text text="{i18n>colSelectedSet}"/>
+                    </Column>
+                    <Column minScreenWidth="Desktop" demandPopin="true">
+                        <Text text="{i18n>colCodeGroup}"/>
+                    </Column>
+                    <Column minScreenWidth="Desktop" demandPopin="true">
+                        <Text text="{i18n>colCodeValuation}"/>
+                    </Column>
+                    <Column minScreenWidth="Desktop" demandPopin="true">
+                        <Text text="{i18n>colQualityScore}"/>
+                    </Column>
+                    <Column minScreenWidth="Desktop" demandPopin="true">
+                        <Text text="{i18n>colDecisionBy}"/>
+                    </Column>
+                    <Column minScreenWidth="Desktop" demandPopin="true">
+                        <Text text="{i18n>colDecisionDate}"/>
+                    </Column>
+                    <Column minScreenWidth="Desktop" demandPopin="true">
+                        <Text text="{i18n>colFollowupAction}"/>
+                    </Column>
+                    <Column hAlign="Center">
+                        <Text text="{i18n>colUD}"/>
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem>
+                        <cells>
+                            <ObjectIdentifier title="{Prueflos}"/>
+                            <Text text="{Plant}"/>
+                            <Text text="{InspectionLotType}"/>
+                            <Text text="{UsageCatalog}"/>
+                            <Text text="{SelectedSet}"/>
+                            <Text text="{CodeGroup}"/>
+                            <Text text="{CodeValuation}"/>
+                            <Text text="{QualityScore}"/>
+                            <Text text="{DecisionBy}"/>
+                            <Text text="{path: 'DecisionDate', type: 'sap.ui.model.type.Date', formatOptions: { style: 'medium' }}"/>
+                            <Text text="{FollowupAction}"/>
+                            <ObjectStatus 
+                                text="{= ${UsageDecisionCode} === 'A' ? 'Approved' : (${UsageDecisionCode} === 'R' ? 'Rejected' : 'Pending') }" 
+                                state="{= ${UsageDecisionCode} === 'A' ? 'Success' : (${UsageDecisionCode} === 'R' ? 'Error' : 'Warning') }" 
+                                icon="{= ${UsageDecisionCode} === 'A' ? 'sap-icon://accept' : (${UsageDecisionCode} === 'R' ? 'sap-icon://decline' : 'sap-icon://pending') }"/>
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+    </Page>
+</mvc:View>
