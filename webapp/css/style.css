@@ -1,57 +1,141 @@
-/* Enter your custom styles here */
+/* Premium Login Styles */
 
+/* 1. Dynamic Background */
 .loginPage section {
-    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); /* Deep Blue Gradient */
-    background-size: cover;
+    background: linear-gradient(-45deg, #1A2980, #26D0CE, #1e3c72, #2a5298);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+}
+
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 .loginContainer {
     height: 100vh;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
+/* 2. Glassmorphism Card */
 .loginBox {
-    background-color: rgba(255, 255, 255, 0.95);
-    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.85);
+    /* Slightly more opaque for readability */
+    border-radius: 20px;
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    width: 400px;
-    max-width: 90%;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    width: 420px;
+    padding: 3rem 2rem !important;
+    /* increased padding */
+    text-align: center;
+    transition: transform 0.3s ease;
 }
 
+.loginBox:hover {
+    transform: translateY(-5px);
+}
+
+/* 3. Typography & Icon */
 .loginTitle {
     color: #1e3c72;
-    font-weight: 700 !important;
-    text-align: center;
+    font-weight: 800 !important;
+    letter-spacing: -0.5px;
     font-family: "72", "Inter", sans-serif;
+    text-transform: uppercase;
+    background: -webkit-linear-gradient(#1e3c72, #2a5298);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .loginSubtitle {
-    color: #555;
-    text-align: center;
-    font-size: 1rem;
-    display: block;
-    margin-bottom: 2rem;
+    color: #666;
+    font-size: 0.95rem;
+    font-weight: 400;
+}
+
+.loginIcon .sapFAvatar {
+    border: 2px solid #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.logoContainer {
+    display: flex;
+    justify-content: center;
+}
+
+/* 4. Inputs */
+.inputGroup {
+    text-align: left;
 }
 
 .inputGroup .sapMLabel {
-    color: #333;
-    font-weight: 600;
+    color: #444;
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+    display: block;
 }
 
+.modernInput .sapMInputBaseInner {
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    height: 44px;
+    /* Taller inputs */
+    padding-left: 12px;
+    transition: all 0.2s ease;
+}
+
+.modernInput.sapMInputBaseContentWrapper {
+    border: none;
+    /* Remove outer wrapper border */
+}
+
+.modernInput .sapMInputBaseInner:focus {
+    border-color: #26D0CE;
+    box-shadow: 0 0 0 3px rgba(38, 208, 206, 0.2);
+    background: #fff;
+}
+
+/* 5. Button */
 .loginButton .sapMBtnInner {
-    background-color: #1e3c72;
-    border-color: #1e3c72;
+    background-image: linear-gradient(to right, #1A2980 0%, #26D0CE 51%, #1A2980 100%);
+    background-size: 200% auto;
     color: white;
-    font-weight: bold;
-    border-radius: 6px;
+    font-weight: 700;
+    border-radius: 50px;
+    /* Pill shape */
+    height: 44px;
+    line-height: 44px;
+    /* Vertically center text */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: none;
+    transition: 0.5s;
+    box-shadow: 0 4px 15px 0 rgba(26, 41, 128, 0.45);
 }
 
 .loginButton:hover .sapMBtnInner {
-    background-color: #2a5298;
-    border-color: #2a5298;
+    background-position: right center;
+    /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
+}
+
+.loginButton:active .sapMBtnInner {
+    transform: scale(0.98);
 }

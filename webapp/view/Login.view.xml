@@ -9,16 +9,25 @@
         <content>
             <FlexBox alignItems="Center" justifyContent="Center" height="100%" class="loginContainer">
                 <items>
-                    <VBox class="loginBox sapUiResponsiveMargin sapUiMediumPadding">
-                        <Title text="Quality Portal" level="H1" titleStyle="H1" class="loginTitle sapUiSmallMarginBottom"/>
+                    <VBox class="loginBox sapUiResponsiveMargin sapUiContentPadding">
+                        <!-- Decorative Top Decoration -->
+                        <Box justifyContent="Center" class="logoContainer sapUiSmallMarginBottom">
+                            <Avatar src="sap-icon://quality-issue" displaySize="L" class="loginIcon sapUiTinyMarginBottom" backgroundColor="Accent6"/>
+                        </Box>
+                        
+                        <Title text="Quality Portal" level="H1" titleStyle="H2" class="loginTitle sapUiTinyMarginBottom"/>
                         <Text text="Engineer Authentication" class="loginSubtitle sapUiMediumMarginBottom"/>
 
                         <VBox class="inputGroup">
                             <Label text="User ID" labelFor="userIdInput" design="Bold"/>
-                            <Input id="userIdInput" placeholder="Enter your ID" width="100%" class="sapUiTinyMarginBottom"/>
+                            <Input id="userIdInput" placeholder="Enter User ID" width="100%" class="modernInput sapUiTinyMarginBottom">
+                                <layoutData>
+                                    <FlexItemData growFactor="1" />
+                                </layoutData>
+                            </Input>
                             
                             <Label text="Password" labelFor="passwordInput" design="Bold" class="sapUiSmallMarginTop"/>
-                            <Input id="passwordInput" type="Password" placeholder="Enter your password" width="100%"/>
+                            <Input id="passwordInput" type="Password" placeholder="Enter Password" width="100%" class="modernInput"/>
                         </VBox>
 
                         <Button text="Login" type="Emphasized" press="onLoginPress" class="loginButton sapUiMediumMarginTop" width="100%"/>
