@@ -42,8 +42,25 @@ sap.ui.define([
             oModel.read("/ZRD_QP_INSPECTIONSet", {
                 filters: aFilters,
                 success: function (oData) {
-                    if (oData.results && oData.results.length > 0) {
-                        that._openDecisionDialog(oData.results[0]);
+                    var oTargetLot = null;
+                    if (oData.results) {
+                        oTargetLot = oData.results.find(function (item) {
+                            return item.Prueflos === sPrueflos;
+                        });
+                    }
+
+                    if (oTargetLot) {
+                        that._openDecisionDialog(oTargetLot);
+                    } else if (oData.results && oData.results.length > 0) {
+                        // Fallback if find fails but results exist (e.g. slight format mismatch)
+                        // But for now, trust the finding logic or warn.
+                        // Attempt to relax comparison (e.g. trim)
+                        oTargetLot = oData.results[0]; // Dangerous fallback but maybe necessary if backend logic is flawed
+                        if (oTargetLot.Prueflos == sPrueflos) {
+                            that._openDecisionDialog(oTargetLot);
+                        } else {
+                            MessageToast.show("Specific Lot details not retrieved. Backend returned Lot: " + oTargetLot.Prueflos);
+                        }
                     } else {
                         MessageToast.show("Inspection Lot details not found.");
                     }
