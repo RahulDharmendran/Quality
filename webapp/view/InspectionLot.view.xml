@@ -4,7 +4,7 @@
     xmlns:core="sap.ui.core">
     <Page id="inspectionLotPage" title="{i18n>inspectionLotTitle}" showNavButton="true" navButtonPress="onNavBack">
         <content>
-            <Table id="inspectionTable" items="{path: '/ZRD_QP_INSPECTIONSet'}" growing="true" growingThreshold="20">
+            <Table id="inspectionTable" items="{path: '/ZRD_QP_INSPECTIONSet'}" growing="true" growingThreshold="20" width="auto" class="sapUiResponsiveMargin">
                 <headerToolbar>
                     <OverflowToolbar>
                         <Title text="Inspection Lots" level="H2"/>
@@ -15,20 +15,29 @@
                     <Column>
                         <Text text="{i18n>colInspectionLot}"/>
                     </Column>
-                    <Column>
-                        <Text text="{i18n>colMaterial}"/>
-                    </Column>
                     <Column minScreenWidth="Tablet" demandPopin="true">
-                        <Text text="{i18n>colType}"/>
+                        <Text text="{i18n>colMaterial}"/>
                     </Column>
                     <Column minScreenWidth="Tablet" demandPopin="true">
                         <Text text="{i18n>colPlant}"/>
                     </Column>
                     <Column minScreenWidth="Tablet" demandPopin="true">
-                        <Text text="{i18n>colDate}"/>
+                        <Text text="{i18n>colType}"/>
+                    </Column>
+                    <Column minScreenWidth="Desktop" demandPopin="true">
+                        <Text text="{i18n>colCreatedDate}"/>
+                    </Column>
+                    <Column minScreenWidth="Desktop" demandPopin="true">
+                        <Text text="{i18n>colStartDate}"/>
+                    </Column>
+                    <Column minScreenWidth="Desktop" demandPopin="true">
+                        <Text text="{i18n>colEndDate}"/>
                     </Column>
                     <Column hAlign="End">
                         <Text text="{i18n>colQuantity}"/>
+                    </Column>
+                    <Column hAlign="Center" minScreenWidth="Tablet" demandPopin="true">
+                        <Text text="{i18n>colUom}"/>
                     </Column>
                     <Column hAlign="Center">
                         <Text text="{i18n>colUD}"/>
@@ -39,10 +48,13 @@
                         <cells>
                             <ObjectIdentifier title="{Prueflos}"/>
                             <Text text="{MaterialNumber}"/>
-                            <Text text="{InspectionType}"/>
                             <Text text="{Plant}"/>
+                            <Text text="{InspectionType}"/>
                             <Text text="{path: 'CreatedDate', type: 'sap.ui.model.type.Date', formatOptions: { style: 'medium' }}"/>
+                            <Text text="{path: 'StartDate', type: 'sap.ui.model.type.Date', formatOptions: { style: 'medium' }}"/>
+                            <Text text="{path: 'EndDate', type: 'sap.ui.model.type.Date', formatOptions: { style: 'medium' }}"/>
                             <Text text="{LotQuantity}"/>
+                            <Text text="{Uom}"/>
                             <ObjectStatus 
                                 text="{= ${UsageDecisionCode} === 'A' ? 'Approved' : (${UsageDecisionCode} === 'R' ? 'Rejected' : 'Pending') }" 
                                 state="{= ${UsageDecisionCode} === 'A' ? 'Success' : (${UsageDecisionCode} === 'R' ? 'Error' : 'Warning') }" 
